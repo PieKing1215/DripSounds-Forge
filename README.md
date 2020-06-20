@@ -10,4 +10,7 @@ This mod is client-side, so it does not need to be installed on the server for i
 Feel free to use in packs if you wish (though compatibility hasn't been tested thoroughly)
 
 Tested on Forge 31.2.0 with MC 1.15.2, on both singleplayer and multiplayer.
+
 Other mods shouldn't conflict unless they do weird things with splash particles.
+
+The mod is licensed under the [GNU General Public License v3.0](LICENSE.md)

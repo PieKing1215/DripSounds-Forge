@@ -1,6 +1,8 @@
 # WaterDripSound
 ### Minecraft Forge mod that makes water drops play a sound
 
+![](demo/WaterDripSound_preview.gif)
+
 This mod is client-side, so it does not need to be installed on the server for it to work.
 
 ### [Releases](https://github.com/PieKing1215/InvMove/releases)

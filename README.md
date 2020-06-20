@@ -7,6 +7,8 @@ This mod is client-side, so it does not need to be installed on the server for i
 
 ### [Releases](https://github.com/PieKing1215/InvMove/releases)
 
+Requires [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config-forge) so the config screen works.
+
 ## Usage
 
 Feel free to use in packs if you wish (though compatibility hasn't been tested thoroughly)

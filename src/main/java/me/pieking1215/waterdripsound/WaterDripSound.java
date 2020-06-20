@@ -19,6 +19,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
@@ -31,8 +32,11 @@ public class WaterDripSound {
     private final Minecraft mc = Minecraft.getInstance();
 
     public WaterDripSound(){
-        MinecraftForge.EVENT_BUS.register(this);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.spec);
+        DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
+            MinecraftForge.EVENT_BUS.register(this);
+            ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.spec);
+            Config.registerClothConfig();
+        });
     }
 
     @SubscribeEvent

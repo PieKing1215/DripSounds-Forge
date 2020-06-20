@@ -9,7 +9,7 @@ The volume can be changed in the mod config.
 
 This mod is client-side, so it does not need to be installed on the server for it to work.
 
-### [Releases](https://github.com/PieKing1215/InvMove/releases)
+### [Releases](https://github.com/PieKing1215/WaterDripSound/releases)
 
 ## Usage
 

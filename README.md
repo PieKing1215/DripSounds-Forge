@@ -1,11 +1,15 @@
 # WaterDripSound
 ### Minecraft Forge mod that makes water drops play a sound
 
-![](demo/WaterDripSound_preview.gif)
+![](demo/WaterDripSound_preview.gif)<br>
+*(You can't hear this gif, but those drops are totally playing a sound)*
+
+Water drops that fall from the ceiling play a subtle "pop" sound when they hit the ground.
+The volume can be changed in the mod config.
 
 This mod is client-side, so it does not need to be installed on the server for it to work.
 
-### [Releases](https://github.com/PieKing1215/InvMove/releases)
+### [Releases](https://github.com/PieKing1215/WaterDripSound/releases)
 
 Requires [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config-forge) so the config screen works.
 

@@ -37,18 +37,18 @@ public class WaterDripSound {
 
     @SubscribeEvent
     public void onWorldLoad(WorldEvent.Load ev){
-        if(Minecraft.getInstance().particles != null) {
+        if(mc.particles != null) {
             try{
                 // get existing splash particle factory
 
                 // do Map<ResourceLocation, IParticleFactory<?>> facts = Minecraft.getInstance().particles.factories;
-                Map<ResourceLocation, IParticleFactory<?>> facts = ObfuscationReflectionHelper.getPrivateValue(ParticleManager.class, Minecraft.getInstance().particles, "field_178932_g");
+                Map<ResourceLocation, IParticleFactory<?>> facts = ObfuscationReflectionHelper.getPrivateValue(ParticleManager.class, mc.particles, "field_178932_g");
                 IParticleFactory pf = facts.get(ParticleTypes.SPLASH.getRegistryName());
 
                 // check that it's the vanilla one
                 if(pf instanceof SplashParticle.Factory){
                     // inject custom splash particle factory
-                    Minecraft.getInstance().particles.registerFactory(ParticleTypes.SPLASH, SplashFactory2::new);
+                    mc.particles.registerFactory(ParticleTypes.SPLASH, SplashFactory2::new);
                     IParticleFactory npf = facts.get(ParticleTypes.SPLASH.getRegistryName());
 
                     // check that it worked

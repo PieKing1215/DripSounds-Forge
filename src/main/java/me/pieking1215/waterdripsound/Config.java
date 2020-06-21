@@ -35,6 +35,7 @@ public class Config {
         ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.CONFIGGUIFACTORY, () -> (client, parent) -> {
             ConfigBuilder builder = ConfigBuilder.create().setParentScreen(parent).setTitle("config.waterdripsound.general");
             builder.setDefaultBackgroundTexture(new ResourceLocation("minecraft:textures/block/mossy_stone_bricks.png"));
+            builder.transparentBackground();
 
             ConfigEntryBuilder eb = builder.getEntryBuilder();
             ConfigCategory general = builder.getOrCreateCategory("key.waterdripsound.category");

@@ -3,7 +3,7 @@ loaderVersion="[31,)"
 issueTrackerURL="https://github.com/PieKing1215/WaterDripSound/issues" #optional
 [[mods]]
 modId="waterdripsound"
-version="0.1.2"
+version="0.1.3"
 displayName="Water Drip Sound"
 #updateJSONURL="http://myurl.me/"
 displayURL="https://github.com/PieKing1215/WaterDripSound"

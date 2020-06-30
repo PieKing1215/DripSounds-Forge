@@ -17,7 +17,7 @@ Requires [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-confi
 
 Feel free to use in packs if you wish (though compatibility hasn't been tested thoroughly)
 
-Do not download this mod from anywhere other than the InvMove GitHub page or the InvMove Curseforge page.<br>
+Do not download this mod from anywhere other than the WaterDripSound GitHub page or the WaterDripSound Curseforge page.<br>
 This mod may not be reposted to any other third-party websites.<br>
 [#StopModReposts](https://stopmodreposts.org)
 

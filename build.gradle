@@ -18,7 +18,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.16.1-0.1.3'
+version = '1.16.2-0.1.3'
 group = 'me.pieking1215.waterdripsound' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'WaterDripSound'
 
@@ -99,7 +99,7 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.16.1-32.0.106'
+    minecraft 'net.minecraftforge:forge:1.16.2-33.0.61'
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
@@ -107,8 +107,8 @@ dependencies {
 
     // Cloth Config API (Forge)
     // www.curseforge.com/minecraft/mc-mods/cloth-config-forge
-    runtimeOnly fg.deobf("curse.maven:cloth-config-forge:3005595")
-    compileOnly fg.deobf("curse.maven:cloth-config-forge:3005595")
+    runtimeOnly fg.deobf("curse.maven:cloth-config-forge:3032280")
+    compileOnly fg.deobf("curse.maven:cloth-config-forge:3032280")
 
     // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
     // provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'

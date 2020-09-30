@@ -1,9 +1,11 @@
 package me.pieking1215.waterdripsound;
 
-import me.shedaniel.forge.clothconfig2.api.ConfigBuilder;
-import me.shedaniel.forge.clothconfig2.api.ConfigCategory;
-import me.shedaniel.forge.clothconfig2.api.ConfigEntryBuilder;
+import me.shedaniel.clothconfig2.forge.api.ConfigBuilder;
+import me.shedaniel.clothconfig2.forge.api.ConfigCategory;
+import me.shedaniel.clothconfig2.forge.api.ConfigEntryBuilder;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ExtensionPoint;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -33,14 +35,14 @@ public class Config {
 
     public static void registerClothConfig() {
         ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.CONFIGGUIFACTORY, () -> (client, parent) -> {
-            ConfigBuilder builder = ConfigBuilder.create().setParentScreen(parent).setTitle("config.waterdripsound.general");
+            ConfigBuilder builder = ConfigBuilder.create().setParentScreen(parent).setTitle(new TranslationTextComponent("config.waterdripsound.general"));
             builder.setDefaultBackgroundTexture(new ResourceLocation("minecraft:textures/block/mossy_stone_bricks.png"));
             builder.transparentBackground();
 
             ConfigEntryBuilder eb = builder.getEntryBuilder();
-            ConfigCategory general = builder.getOrCreateCategory("key.waterdripsound.category");
-            general.addEntry(eb.startBooleanToggle("config.waterdripsound.enable", GENERAL.enabled.get()).setDefaultValue(true).setSaveConsumer(GENERAL.enabled::set).build());
-            general.addEntry(eb.startIntSlider("config.waterdripsound.volume", (int)(GENERAL.volume.get() * 100), 0, 100).setDefaultValue(30).setTextGetter(integer -> "Volume: " + integer + "%").setSaveConsumer(integer -> GENERAL.volume.set(integer / 100.0)).build());
+            ConfigCategory general = builder.getOrCreateCategory(new TranslationTextComponent("key.waterdripsound.category"));
+            general.addEntry(eb.startBooleanToggle(new TranslationTextComponent("config.waterdripsound.enable"), GENERAL.enabled.get()).setDefaultValue(true).setSaveConsumer(GENERAL.enabled::set).build());
+            general.addEntry(eb.startIntSlider(new TranslationTextComponent("config.waterdripsound.volume"), (int)(GENERAL.volume.get() * 100), 0, 100).setDefaultValue(30).setTextGetter(integer -> new StringTextComponent("Volume: " + integer + "%")).setSaveConsumer(integer -> GENERAL.volume.set(integer / 100.0)).build());
 
             return builder.setSavingRunnable(spec::save).build();
         });

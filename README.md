@@ -26,8 +26,6 @@ Do not download this mod from anywhere other than the WaterDripSound GitHub page
 This mod may not be reposted to any other third-party websites.<br>
 [#StopModReposts](https://stopmodreposts.org)
 
-Tested on Forge 31.2.0 with MC 1.15.2, on both singleplayer and multiplayer.
-
 Other mods shouldn't conflict unless they do weird things with splash particles.
 
 The mod is licensed under the [GNU General Public License v3.0](LICENSE.md)

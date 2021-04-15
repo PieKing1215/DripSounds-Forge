@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[33,)"
+loaderVersion="[34,)"
 license="GPL v3.0"
 issueTrackerURL="https://github.com/PieKing1215/WaterDripSound/issues" #optional
 [[mods]]
@@ -18,14 +18,14 @@ Makes water drips play a sound.
 [[dependencies.waterdripsound]]
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[33,)" #mandatory
+    versionRange="[34,)" #mandatory
     ordering="NONE"
     side="BOTH"
 # Here's another dependency
 [[dependencies.waterdripsound]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.2]"
+    versionRange="[1.16.3]"
     ordering="NONE"
     side="BOTH"
 [[dependencies.waterdripsound]]

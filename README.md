@@ -27,3 +27,6 @@ This mod may not be reposted to any other third-party websites.<br>
 Other mods shouldn't conflict unless they do weird things with splash particles.
 
 The mod is licensed under the [GNU General Public License v3.0](LICENSE.md)
+
+## Upcoming
+More config options

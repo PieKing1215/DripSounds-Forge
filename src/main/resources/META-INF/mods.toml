@@ -9,9 +9,7 @@ displayName="Drip Sounds"
 displayURL="https://github.com/PieKing1215/WaterDripSound"
 logoFile="logo.png"
 authors="PieKing1215"
-description='''
-Makes drip particles play a sound (and other related changes).
-'''
+description='''Makes drip particles play a sound (and other related changes).'''
 
 [[dependencies.waterdripsound]]
     modId="forge"

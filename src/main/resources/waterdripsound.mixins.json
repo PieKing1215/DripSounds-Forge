@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "me.pieking1215.waterdripsound.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "waterdripsound.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8"
+}

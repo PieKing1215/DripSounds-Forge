@@ -10,6 +10,7 @@ import net.minecraft.particles.BasicParticleType;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -19,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MixinLandingLavaParticle {
 
     @Inject(at = @At("HEAD"), method = "makeParticle", cancellable = true)
-    private void createParticle(BasicParticleType defaultParticleType, ClientWorld clientWorld, double x, double y, double z, double vx, double vy, double vz, CallbackInfoReturnable<Particle> callback) {
+    private void createParticle(BasicParticleType defaultParticleType, World clientWorld, double x, double y, double z, double vx, double vy, double vz, CallbackInfoReturnable<Particle> callback) {
         // if mod is enabled in the config
         if(WaterDripSoundConfig.GENERAL.enabled.get()){
             // only play sound if landed on block or non-lava fluid (water)

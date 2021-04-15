@@ -19,7 +19,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.16-0.2.0'
+version = '1.15-0.2.0'
 group = 'me.pieking1215.waterdripsound'
 archivesBaseName = 'WaterDripSound'
 
@@ -30,7 +30,7 @@ mixin {
 }
 
 minecraft {
-    mappings channel: 'snapshot', version: '20200723-1.16.1'
+    mappings channel: 'snapshot', version: '20200514-1.15.1'
 
     runs {
         client {
@@ -76,13 +76,12 @@ repositories {
 }
 
 dependencies {
-    //minecraft 'net.minecraftforge:forge:1.16.1-32.0.108' // 1.16.1
-    minecraft 'net.minecraftforge:forge:1.16.5-36.1.4' // 1.16.5
+    minecraft 'net.minecraftforge:forge:1.15.2-31.2.50'
 
     // Cloth Config API (Forge)
     // www.curseforge.com/minecraft/mc-mods/cloth-config-forge
-    runtimeOnly fg.deobf("curse.maven:cloth-config-forge:3155284")
-    compileOnly fg.deobf("curse.maven:cloth-config-forge:3155284")
+    runtimeOnly fg.deobf("curse.maven:cloth-config-forge:2938583")
+    compileOnly fg.deobf("curse.maven:cloth-config-forge:2938583")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

@@ -1,20 +1,18 @@
-<h1>WaterDripSound<br>
+<h1>Drip Sounds (Forge)<br>
   <a href="https://www.curseforge.com/minecraft/mc-mods/waterdripsound"><img src="http://cf.way2muchnoise.eu/versions/%20For%20MC%20_waterdripsound_all(555-0C8E8E-fff-010101).svg" alt="Supported Versions"></a>
-  <a href="https://github.com/PieKing1215/WaterDripSound/blob/master/LICENSE"><img src="https://img.shields.io/github/license/PieKing1215/WaterDripSound?style=flat&color=0C8E8E" alt="License"></a>
+  <a href="https://github.com/PieKing1215/DripSounds-Forge/blob/master/LICENSE"><img src="https://img.shields.io/github/license/PieKing1215/DripSounds-Forge?style=flat&color=0C8E8E" alt="License"></a>
   <a href="https://www.curseforge.com/minecraft/mc-mods/waterdripsound"><img src="http://cf.way2muchnoise.eu/full_waterdripsound_downloads(E04E14-555-fff-010101-1C1C1C).svg" alt="Download Count"></a>
 </h1>
 
-### Minecraft Forge mod that makes water drops play a sound
+### Minecraft Forge mod that adds sounds for drip particles landing and other related changes
 
-![](demo/WaterDripSound_preview.gif)<br>
-*(You can't hear this gif, but those drops are totally playing a sound)*
-
-Water drops that fall from the ceiling play a subtle "pop" sound when they hit the ground.
-The volume can be changed in the mod config.
+- Plays water pop sound when a water drop lands
+- Adds a new sizzle sound for when a lava drop lands
+- Adds the ability to configure the rate of drip particle spawning
 
 This mod is client-side, so it does not need to be installed on the server for it to work.
 
-### [Releases](https://github.com/PieKing1215/WaterDripSound/releases)
+### [Releases](https://github.com/PieKing1215/DripSounds-Forge/releases)
 
 Requires [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config-forge) so the config screen works.
 
@@ -22,7 +20,7 @@ Requires [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-confi
 
 Feel free to use in packs if you wish (though compatibility hasn't been tested thoroughly)
 
-Do not download this mod from anywhere other than the WaterDripSound GitHub page or the WaterDripSound Curseforge page.<br>
+Do not download this mod from anywhere other than the DripSounds-Forge GitHub page or the DripSounds-Forge Curseforge page.<br>
 This mod may not be reposted to any other third-party websites.<br>
 [#StopModReposts](https://stopmodreposts.org)
 

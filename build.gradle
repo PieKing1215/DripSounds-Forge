@@ -19,7 +19,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.16-0.2.0'
+version = '1.16-0.2.1'
 group = 'me.pieking1215.waterdripsound'
 archivesBaseName = 'WaterDripSound'
 

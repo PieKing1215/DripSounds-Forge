@@ -4,7 +4,7 @@ license="GPL v3.0"
 issueTrackerURL="https://github.com/PieKing1215/WaterDripSound/issues"
 [[mods]]
 modId="waterdripsound"
-version="0.2.0"
+version="0.2.1"
 displayName="Drip Sounds"
 displayURL="https://github.com/PieKing1215/WaterDripSound"
 logoFile="logo.png"

@@ -27,7 +27,7 @@ public class MixinLandingLavaParticle {
             if (clientWorld.getBlockState(new BlockPos(x, y - 1, z)).getFluidState().getFluid() != Fluids.LAVA) {
                 // play the sound
                 float vol = MathHelper.clamp(WaterDripSoundConfig.GENERAL.volume.get().floatValue() * 0.5f, 0f, 1f);
-                clientWorld.playSound(x, y, z, WaterDripSound.LAVA_DRIP_SOUND.get(), SoundCategory.AMBIENT, vol, 1f + (float)(Math.random() * 0.1f), false);
+                if(WaterDripSound.LAVA_DRIP_SOUND.isPresent()) clientWorld.playSound(x, y, z, WaterDripSound.LAVA_DRIP_SOUND.get(), SoundCategory.AMBIENT, vol, 1f + (float)(Math.random() * 0.1f), false);
             }
         }
     }

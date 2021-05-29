@@ -6,11 +6,27 @@
 
 ### Minecraft Forge mod that adds sounds for drip particles landing and other related changes
 
+<table>
+<tr>
+  <td>Forge</td>
+  <td><a href="https://github.com/PieKing1215/DripSounds-Forge">GitHub</a></td>
+  <td><a href="https://www.curseforge.com/minecraft/mc-mods/waterdripsound">CurseForge</a></td>
+  <td><a href="https://modrinth.com/mod/waterdripsound">Modrinth</a></td>
+</tr>
+<tr>
+  <td>Fabric</td>
+  <td><a href="https://github.com/PieKing1215/DripSounds-Fabric">GitHub</a></td>
+  <td><a href="https://www.curseforge.com/minecraft/mc-mods/dripsounds-fabric">CurseForge</a></td>
+  <td><a href="https://modrinth.com/mod/dripsounds-fabric">Modrinth</a></td>
+</tr>
+</table>
+
 - Plays water pop sound when a water drop lands
 - Adds a new sizzle sound for when a lava drop lands
 - Adds the ability to configure the rate of drip particle spawning
 
-This mod is client-side, so it does not need to be installed on the server for it to work.
+This mod is client-side, so it does not need to be installed on the server for it to work.<br>
+*(NOTE: As of v0.2.1 the lava drop sizzle sound only works in multiplayer if the server also has the mod. This will hopefully be fixed in a future version)*
 
 ### [Releases](https://github.com/PieKing1215/DripSounds-Forge/releases)
 
@@ -20,7 +36,7 @@ Requires [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-confi
 
 Feel free to use in packs if you wish (though compatibility hasn't been tested thoroughly)
 
-Do not download this mod from anywhere other than the DripSounds-Forge GitHub page or the DripSounds-Forge Curseforge page.<br>
+Do not download this mod from anywhere other than the DripSounds-Forge GitHub, CurseForge, or Modrinth page.<br>
 This mod may not be reposted to any other third-party websites.<br>
 [#StopModReposts](https://stopmodreposts.org)
 

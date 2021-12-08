@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SplashParticle.Factory.class)
 public class MixinWaterSplashParticle {
 
-    @Inject(at = @At("HEAD"), method = "makeParticle", cancellable = true)
+    @Inject(at = @At("HEAD"), method = "createParticle", cancellable = true)
     private void createParticle(BasicParticleType defaultParticleType, ClientWorld clientWorld, double x, double y, double z, double vx, double vy, double vz, CallbackInfoReturnable<Particle> callback) {
         // if mod is enabled in the config
         if(WaterDripSoundConfig.GENERAL.enabled.get()){
@@ -30,7 +30,7 @@ public class MixinWaterSplashParticle {
                     /*if(WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()) {
                         vol *= Math.random() * 0.7 + 0.3; // same as vanilla dripstone drips
                     }*/
-                    clientWorld.playSound(x, y, z, /*WaterDripSoundConfig.GENERAL.useDripstoneSounds.get() ? SoundEvents.BLOCK_POINTED_DRIPSTONE_DRIP_WATER : */SoundEvents.BLOCK_BUBBLE_COLUMN_BUBBLE_POP, WaterDripSoundConfig.GENERAL.soundCategory.get(), vol, 1f, false);
+                    clientWorld.playLocalSound(x, y, z, /*WaterDripSoundConfig.GENERAL.useDripstoneSounds.get() ? SoundEvents.BLOCK_POINTED_DRIPSTONE_DRIP_WATER : */SoundEvents.BUBBLE_COLUMN_BUBBLE_POP, WaterDripSoundConfig.GENERAL.soundCategory.get(), vol, 1f, false);
                 }
             }
         }

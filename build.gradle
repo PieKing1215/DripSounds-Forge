@@ -29,18 +29,18 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.16-0.3.0'
+version = '1.17-0.3.0'
 group = 'me.pieking1215.waterdripsound'
 archivesBaseName = 'WaterDripSound'
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '16'
 
 mixin {
     add sourceSets.main, "waterdripsound.refmap.json"
 }
 
 minecraft {
-    mappings channel: "official", version: "1.16.5"
+    mappings channel: "official", version: "1.17.1"
 
     runs {
         client {
@@ -81,12 +81,12 @@ minecraft {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.19'
+    minecraft 'net.minecraftforge:forge:1.17.1-37.1.0'
 
     // Cloth Config API (Forge)
     // www.curseforge.com/minecraft/mc-mods/cloth-config-forge
-    runtimeOnly fg.deobf("curse.maven:cloth-config-forge-348521:3521275")
-    compileOnly fg.deobf("curse.maven:cloth-config-forge-348521:3521275")
+    runtimeOnly fg.deobf("curse.maven:cloth_config_forge-348521:3521268")
+    compileOnly fg.deobf("curse.maven:cloth_config_forge-348521:3521268")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

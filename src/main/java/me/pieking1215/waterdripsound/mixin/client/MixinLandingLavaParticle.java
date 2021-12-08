@@ -2,30 +2,29 @@ package me.pieking1215.waterdripsound.mixin.client;
 
 import me.pieking1215.waterdripsound.WaterDripSound;
 import me.pieking1215.waterdripsound.WaterDripSoundConfig;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.DripParticle;
 import net.minecraft.client.particle.Particle;
-import net.minecraft.client.world.ClientWorld;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.particles.BasicParticleType;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.util.Mth;
+import net.minecraft.world.level.material.Fluids;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(DripParticle.LandingLavaFactory.class)
+@Mixin(DripParticle.LavaLandProvider.class)
 public class MixinLandingLavaParticle {
 
     @Inject(at = @At("HEAD"), method = "createParticle", cancellable = true)
-    private void createParticle(BasicParticleType defaultParticleType, ClientWorld clientWorld, double x, double y, double z, double vx, double vy, double vz, CallbackInfoReturnable<Particle> callback) {
+    private void createParticle(SimpleParticleType defaultParticleType, ClientLevel clientWorld, double x, double y, double z, double vx, double vy, double vz, CallbackInfoReturnable<Particle> callback) {
         // if mod is enabled in the config
         if(WaterDripSoundConfig.GENERAL.enabled.get()){
             // only play sound if landed on block or non-lava fluid (water)
             if (clientWorld.getBlockState(new BlockPos(x, y - 1, z)).getFluidState().getType() != Fluids.LAVA) {
                 // play the sound
-                float vol = MathHelper.clamp(WaterDripSoundConfig.GENERAL.volume.get().floatValue() * 0.5f, 0f, 1f);
+                float vol = Mth.clamp(WaterDripSoundConfig.GENERAL.volume.get().floatValue() * 0.5f, 0f, 1f);
                 /*if(WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()) {
                     vol *= Math.random() * 0.7 + 0.3; // same as vanilla dripstone drips
                 }*/

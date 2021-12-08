@@ -26,7 +26,12 @@ public class MixinLandingLavaParticle {
             if (clientWorld.getBlockState(new BlockPos(x, y - 1, z)).getFluidState().getFluid() != Fluids.LAVA) {
                 // play the sound
                 float vol = MathHelper.clamp(WaterDripSoundConfig.GENERAL.volume.get().floatValue() * 0.5f, 0f, 1f);
-                if(WaterDripSound.LAVA_DRIP_SOUND.isPresent()) clientWorld.playSound(x, y, z, WaterDripSound.LAVA_DRIP_SOUND.get(), SoundCategory.AMBIENT, vol, 1f + (float)(Math.random() * 0.1f), false);
+                /*if(WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()) {
+                    vol *= Math.random() * 0.7 + 0.3; // same as vanilla dripstone drips
+                }*/
+                if(WaterDripSound.LAVA_DRIP_SOUND.isPresent()/* || WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()*/) {
+                    clientWorld.playSound(x, y, z, /*WaterDripSoundConfig.GENERAL.useDripstoneSounds.get() ? SoundEvents.BLOCK_POINTED_DRIPSTONE_DRIP_LAVA : */WaterDripSound.LAVA_DRIP_SOUND.get(), WaterDripSoundConfig.GENERAL.soundCategory.get(), vol, 1f + (float)(Math.random() * 0.1f), false);
+                }
             }
         }
     }

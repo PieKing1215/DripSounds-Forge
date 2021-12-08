@@ -3,8 +3,11 @@ package me.pieking1215.waterdripsound;
 import me.shedaniel.clothconfig2.forge.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.forge.api.ConfigCategory;
 import me.shedaniel.clothconfig2.forge.api.ConfigEntryBuilder;
+import me.shedaniel.clothconfig2.forge.gui.entries.BooleanListEntry;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ExtensionPoint;
@@ -19,6 +22,8 @@ public class WaterDripSoundConfig {
         public final ForgeConfigSpec.ConfigValue<Boolean> enabled;
         public final ForgeConfigSpec.ConfigValue<Double> volume;
         public final ForgeConfigSpec.ConfigValue<Integer> dripChance;
+//        public final ForgeConfigSpec.ConfigValue<Boolean> useDripstoneSounds;
+        public final ForgeConfigSpec.ConfigValue<SoundCategory> soundCategory;
 
         General(ForgeConfigSpec.Builder builder) {
             builder.push("General");
@@ -34,6 +39,14 @@ public class WaterDripSoundConfig {
                     .comment("Chance of a drip forming each tick (one in X so lower is faster) [1-100|default:10]")
                     .translation("dripChance.waterdripsound.config")
                     .define("dripChance", 10);
+//            useDripstoneSounds = builder
+//                    .comment("If enabled, uses the Dripstone water/lava drip sounds added in 1.17. If not, uses sounds from older versions of the mod. [false/true|default:true]")
+//                    .translation("useDripstoneSounds.waterdripsound.config")
+//                    .define("useDripstoneSounds", true);
+            soundCategory = builder
+                    .comment("Sound category [default:AMBIENT]")
+                    .translation("soundCategory.waterdripsound.config")
+                    .define("soundCategory", SoundCategory.AMBIENT);
             builder.pop();
         }
     }
@@ -49,6 +62,12 @@ public class WaterDripSoundConfig {
             general.addEntry(eb.startBooleanToggle(new TranslationTextComponent("config.waterdripsound.enable"), GENERAL.enabled.get()).setDefaultValue(true).setSaveConsumer(GENERAL.enabled::set).build());
             general.addEntry(eb.startIntSlider(new TranslationTextComponent("config.waterdripsound.volume"), (int)(GENERAL.volume.get() * 100), 0, 100).setDefaultValue(30).setTextGetter(integer -> new StringTextComponent("Volume: " + integer + "%")).setSaveConsumer(integer -> GENERAL.volume.set(integer / 100.0)).build());
             general.addEntry(eb.startIntSlider(new TranslationTextComponent("config.waterdripsound.dripChance"), GENERAL.dripChance.get(), 1, 100).setDefaultValue(10).setTextGetter(integer -> new StringTextComponent("One in " + integer)).setSaveConsumer(GENERAL.dripChance::set).build());
+
+            BooleanListEntry ble = eb.startBooleanToggle(new TranslationTextComponent("config.waterdripsound.useDripstoneSounds"), false).setDefaultValue(false).setYesNoTextSupplier(aBoolean -> new StringTextComponent(TextFormatting.GRAY + "Unavailable")).setTooltip(new TranslationTextComponent("tooltip.config.waterdripsound.useDripstoneSounds.cannot")).build();
+            ble.setEditable(false);
+            general.addEntry(ble);
+            
+            general.addEntry(eb.startEnumSelector(new TranslationTextComponent("config.waterdripsound.soundCategory"), SoundCategory.class, GENERAL.soundCategory.get()).setDefaultValue(SoundCategory.AMBIENT).setEnumNameProvider(anEnum -> new TranslationTextComponent("soundCategory." + ((SoundCategory)anEnum).getName())).setSaveConsumer(GENERAL.soundCategory::set).build());
 
             return builder.setSavingRunnable(spec::save).build();
         });

@@ -1,10 +1,10 @@
 modLoader="javafml"
 loaderVersion="[32,)" # 1.16+
-license="GPL v3.0"
+license="LGPL v3.0"
 issueTrackerURL="https://github.com/PieKing1215/WaterDripSound/issues"
 [[mods]]
 modId="waterdripsound"
-version="0.2.1"
+version="0.3.0"
 displayName="Drip Sounds"
 displayURL="https://github.com/PieKing1215/WaterDripSound"
 logoFile="logo.png"

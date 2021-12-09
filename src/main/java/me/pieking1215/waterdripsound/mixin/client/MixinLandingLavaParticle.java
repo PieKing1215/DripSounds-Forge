@@ -7,6 +7,7 @@ import net.minecraft.client.particle.DripParticle;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.material.Fluids;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,11 +26,11 @@ public class MixinLandingLavaParticle {
             if (clientWorld.getBlockState(new BlockPos(x, y - 1, z)).getFluidState().getType() != Fluids.LAVA) {
                 // play the sound
                 float vol = Mth.clamp(WaterDripSoundConfig.GENERAL.volume.get().floatValue() * 0.5f, 0f, 1f);
-                /*if(WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()) {
+                if(WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()) {
                     vol *= Math.random() * 0.7 + 0.3; // same as vanilla dripstone drips
-                }*/
-                if(WaterDripSound.LAVA_DRIP_SOUND.isPresent()/* || WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()*/) {
-                    clientWorld.playLocalSound(x, y, z, /*WaterDripSoundConfig.GENERAL.useDripstoneSounds.get() ? SoundEvents.BLOCK_POINTED_DRIPSTONE_DRIP_LAVA : */WaterDripSound.LAVA_DRIP_SOUND.get(), WaterDripSoundConfig.GENERAL.soundCategory.get(), vol, 1f + (float)(Math.random() * 0.1f), false);
+                }
+                if(WaterDripSound.LAVA_DRIP_SOUND.isPresent() || WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()) {
+                    clientWorld.playLocalSound(x, y, z, WaterDripSoundConfig.GENERAL.useDripstoneSounds.get() ? SoundEvents.POINTED_DRIPSTONE_DRIP_LAVA : WaterDripSound.LAVA_DRIP_SOUND.get(), WaterDripSoundConfig.GENERAL.soundCategory.get(), vol, 1f + (float)(Math.random() * 0.1f), false);
                 }
             }
         }

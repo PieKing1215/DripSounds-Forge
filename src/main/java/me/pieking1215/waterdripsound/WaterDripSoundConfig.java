@@ -21,7 +21,7 @@ public class WaterDripSoundConfig {
         public final ForgeConfigSpec.ConfigValue<Boolean> enabled;
         public final ForgeConfigSpec.ConfigValue<Double> volume;
         public final ForgeConfigSpec.ConfigValue<Integer> dripChance;
-//        public final ForgeConfigSpec.ConfigValue<Boolean> useDripstoneSounds;
+        public final ForgeConfigSpec.ConfigValue<Boolean> useDripstoneSounds;
         public final ForgeConfigSpec.ConfigValue<SoundSource> soundCategory;
 
         General(ForgeConfigSpec.Builder builder) {
@@ -38,10 +38,10 @@ public class WaterDripSoundConfig {
                     .comment("Chance of a drip forming each tick (one in X so lower is faster) [1-100|default:10]")
                     .translation("dripChance.waterdripsound.config")
                     .define("dripChance", 10);
-//            useDripstoneSounds = builder
-//                    .comment("If enabled, uses the Dripstone water/lava drip sounds added in 1.17. If not, uses sounds from older versions of the mod. [false/true|default:true]")
-//                    .translation("useDripstoneSounds.waterdripsound.config")
-//                    .define("useDripstoneSounds", true);
+            useDripstoneSounds = builder
+                    .comment("If enabled, uses the Dripstone water/lava drip sounds added in 1.17. If not, uses sounds from older versions of the mod. [false/true|default:true]")
+                    .translation("useDripstoneSounds.waterdripsound.config")
+                    .define("useDripstoneSounds", true);
             soundCategory = builder
                     .comment("Sound category [default:AMBIENT]")
                     .translation("soundCategory.waterdripsound.config")
@@ -61,11 +61,7 @@ public class WaterDripSoundConfig {
             general.addEntry(eb.startBooleanToggle(new TranslatableComponent("config.waterdripsound.enable"), GENERAL.enabled.get()).setDefaultValue(true).setSaveConsumer(GENERAL.enabled::set).build());
             general.addEntry(eb.startIntSlider(new TranslatableComponent("config.waterdripsound.volume"), (int)(GENERAL.volume.get() * 100), 0, 100).setDefaultValue(30).setTextGetter(integer -> new TextComponent("Volume: " + integer + "%")).setSaveConsumer(integer -> GENERAL.volume.set(integer / 100.0)).build());
             general.addEntry(eb.startIntSlider(new TranslatableComponent("config.waterdripsound.dripChance"), GENERAL.dripChance.get(), 1, 100).setDefaultValue(10).setTextGetter(integer -> new TextComponent("One in " + integer)).setSaveConsumer(GENERAL.dripChance::set).build());
-
-            BooleanListEntry ble = eb.startBooleanToggle(new TranslatableComponent("config.waterdripsound.useDripstoneSounds"), false).setDefaultValue(false).setYesNoTextSupplier(aBoolean -> new TextComponent(ChatFormatting.GRAY + "Unavailable")).setTooltip(new TranslatableComponent("tooltip.config.waterdripsound.useDripstoneSounds.cannot")).build();
-            ble.setEditable(false);
-            general.addEntry(ble);
-
+            general.addEntry(eb.startBooleanToggle(new TranslatableComponent("config.waterdripsound.useDripstoneSounds"), GENERAL.useDripstoneSounds.get()).setDefaultValue(true).setTooltip(new TranslatableComponent("tooltip.config.waterdripsound.useDripstoneSounds")).setSaveConsumer(GENERAL.useDripstoneSounds::set).build());
             general.addEntry(eb.startEnumSelector(new TranslatableComponent("config.waterdripsound.soundCategory"), SoundSource.class, GENERAL.soundCategory.get()).setDefaultValue(SoundSource.AMBIENT).setEnumNameProvider(anEnum -> new TranslatableComponent("soundCategory." + ((SoundSource)anEnum).getName())).setSaveConsumer(GENERAL.soundCategory::set).build());
 
             return builder.setSavingRunnable(spec::save).build();

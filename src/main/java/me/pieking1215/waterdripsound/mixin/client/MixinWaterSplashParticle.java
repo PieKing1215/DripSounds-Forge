@@ -26,10 +26,10 @@ public class MixinWaterSplashParticle {
                 if (clientWorld.getBlockState(new BlockPos(x, y - 1, z)).getFluidState().isEmpty()) {
                     // play the sound
                     float vol = Mth.clamp(WaterDripSoundConfig.GENERAL.volume.get().floatValue(), 0f, 1f);
-                    /*if(WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()) {
+                    if(WaterDripSoundConfig.GENERAL.useDripstoneSounds.get()) {
                         vol *= Math.random() * 0.7 + 0.3; // same as vanilla dripstone drips
-                    }*/
-                    clientWorld.playLocalSound(x, y, z, /*WaterDripSoundConfig.GENERAL.useDripstoneSounds.get() ? SoundEvents.BLOCK_POINTED_DRIPSTONE_DRIP_WATER : */SoundEvents.BUBBLE_COLUMN_BUBBLE_POP, WaterDripSoundConfig.GENERAL.soundCategory.get(), vol, 1f, false);
+                    }
+                    clientWorld.playLocalSound(x, y, z, WaterDripSoundConfig.GENERAL.useDripstoneSounds.get() ? SoundEvents.POINTED_DRIPSTONE_DRIP_WATER : SoundEvents.BUBBLE_COLUMN_BUBBLE_POP, WaterDripSoundConfig.GENERAL.soundCategory.get(), vol, 1f, false);
                 }
             }
         }

@@ -25,20 +25,21 @@
 - Plays water pop sound when a water drop lands
 - Adds a new sizzle sound for when a lava drop lands
 - Adds the ability to configure the rate of drip particle spawning
+- In 1.17+, the sounds for water/lava drips use the Dripstone sounds by default, and there is an option to use the old sounds if desired (like in 1.16)
 
 This mod is client-side, so it does not need to be installed on the server for it to work.<br>
-*(NOTE: As of v0.2.1 the lava drop sizzle sound only works in multiplayer if the server also has the mod. This will hopefully be fixed in a future version)*
-
-### [Releases](https://github.com/PieKing1215/DripSounds-Forge/releases)
+*(NOTE: If you are not using the dripstone sounds, the custom lava drop sizzle sound only works in multiplayer if the server also has the mod. This will hopefully be fixed in a future version)*
 
 Requires [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config-forge) so the config screen works.
+
+### [Releases](https://github.com/PieKing1215/DripSounds-Forge/releases)
 
 ## Usage
 
 Feel free to use in packs if you wish (though compatibility hasn't been tested thoroughly)
 
-Do not download this mod from anywhere other than the DripSounds-Forge GitHub, CurseForge, or Modrinth page.<br>
-This mod may not be reposted to any other third-party websites.<br>
+The only official pages for this mod are the DripSounds-Forge GitHub, CurseForge, and Modrinth pages.<br>
+Please refrain from reposting the mod unchanged on other third-party websites without asking for permission.<br>
 [#StopModReposts](https://stopmodreposts.org)
 
 Other mods shouldn't conflict unless they do weird things with splash particles.

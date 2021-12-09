@@ -1,42 +1,61 @@
 buildscript {
     repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
-        maven { url = "https://repo.spongepowered.org/maven" }
+        maven {
+            name = "forge"
+            url = "https://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sponge"
+            url = "https://repo.spongepowered.org/repository/maven-public/"
+        }
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.+', changing: true
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 
-plugins {
-    id("com.wynprice.cursemaven") version("2.1.1")
+repositories {
+    maven {
+        name = "curseforge"
+        url = "https://minecraft.curseforge.com/api/maven/"
+    }
+    maven {
+        name = "cursemaven"
+        url = "https://www.cursemaven.com"
+    }
+    maven {
+        name = "sponge"
+        url = "https://repo.spongepowered.org/repository/maven-public/"
+    }
 }
 
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.16-0.2.0'
+version = '1.18-0.3.0'
 group = 'me.pieking1215.waterdripsound'
 archivesBaseName = 'WaterDripSound'
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '17'
 
 mixin {
     add sourceSets.main, "waterdripsound.refmap.json"
 }
 
 minecraft {
-    mappings channel: 'snapshot', version: '20200723-1.16.1'
+    mappings channel: "official", version: "1.18"
 
     runs {
         client {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             arg "-mixin.config=waterdripsound.mixins.json"
             mods {
                 waterdripsound {
@@ -49,6 +68,8 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             mods {
                 waterdripsound {
                     source sourceSets.main
@@ -60,6 +81,8 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             args '--mod', 'waterdripsound', '--all', '--output', file('src/generated/resources/'), "-mixin.config=waterdripsound.mixins.json"
             mods {
                 waterdripsound {
@@ -70,19 +93,15 @@ minecraft {
     }
 }
 
-repositories {
-    maven { url "https://files.minecraftforge.net/maven" }
-    jcenter()
-}
-
 dependencies {
-    //minecraft 'net.minecraftforge:forge:1.16.1-32.0.108' // 1.16.1
-    minecraft 'net.minecraftforge:forge:1.16.5-36.1.4' // 1.16.5
+    minecraft 'net.minecraftforge:forge:1.18-38.0.16'
+
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 
     // Cloth Config API (Forge)
     // www.curseforge.com/minecraft/mc-mods/cloth-config-forge
-    runtimeOnly fg.deobf("curse.maven:cloth-config-forge:3155284")
-    compileOnly fg.deobf("curse.maven:cloth-config-forge:3155284")
+    runtimeOnly fg.deobf("curse.maven:cloth_config_forge-348521:3546623")
+    compileOnly fg.deobf("curse.maven:cloth_config_forge-348521:3546623")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[32,)" # 1.16+
-license="GPL v3.0"
+loaderVersion="[38,)"
+license="LGPL v3.0"
 issueTrackerURL="https://github.com/PieKing1215/WaterDripSound/issues"
 [[mods]]
 modId="waterdripsound"
-version="0.2.0"
+version="0.3.0"
 displayName="Drip Sounds"
 displayURL="https://github.com/PieKing1215/WaterDripSound"
 logoFile="logo.png"
@@ -14,18 +14,18 @@ description='''Makes drip particles play a sound (and other related changes).'''
 [[dependencies.waterdripsound]]
     modId="forge"
     mandatory=true
-    versionRange="[32,)"
+    versionRange="[38,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.waterdripsound]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.1,)"
+    versionRange="[1.18,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.waterdripsound]]
-    modId="cloth-config"
+    modId="cloth_config"
     mandatory=true
-    versionRange="[4.0,)"
+    versionRange="[6.0,)"
     ordering="NONE"
     side="CLIENT"

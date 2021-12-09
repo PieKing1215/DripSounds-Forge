@@ -47,4 +47,4 @@ Other mods shouldn't conflict unless they do weird things with splash particles.
 The mod is licensed under the [GNU Lesser General Public License v3.0](COPYING)
 
 ## Upcoming
-More config options
+idk, feel free to suggest things

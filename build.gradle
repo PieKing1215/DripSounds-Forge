@@ -4,7 +4,10 @@ buildscript {
             name = "forge"
             url = "https://files.minecraftforge.net/maven"
         }
-        maven { url = "https://repo.spongepowered.org/maven" }
+        maven {
+            name = "sponge"
+            url = "https://repo.spongepowered.org/repository/maven-public/"
+        }
         jcenter()
         mavenCentral()
     }
@@ -22,6 +25,10 @@ repositories {
     maven {
         name = "cursemaven"
         url = "https://www.cursemaven.com"
+    }
+    maven {
+        name = "sponge"
+        url = "https://repo.spongepowered.org/repository/maven-public/"
     }
 }
 
@@ -47,6 +54,8 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             arg "-mixin.config=waterdripsound.mixins.json"
             mods {
                 waterdripsound {
@@ -59,6 +68,8 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             mods {
                 waterdripsound {
                     source sourceSets.main
@@ -70,6 +81,8 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             args '--mod', 'waterdripsound', '--all', '--output', file('src/generated/resources/'), "-mixin.config=waterdripsound.mixins.json"
             mods {
                 waterdripsound {
@@ -82,6 +95,8 @@ minecraft {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.17.1-37.1.0'
+
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 
     // Cloth Config API (Forge)
     // www.curseforge.com/minecraft/mc-mods/cloth-config-forge

@@ -38,9 +38,9 @@ Requires [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-confi
 
 Feel free to use in packs if you wish (though compatibility hasn't been tested thoroughly)
 
-The only official pages for this mod are the DripSounds-Forge GitHub, CurseForge, and Modrinth pages.<br>
-Please refrain from reposting the mod unchanged on other third-party websites without asking for permission.<br>
-[#StopModReposts](https://stopmodreposts.org)
+The only official downloads are from the DripSounds-Forge GitHub, Modrinth, or CurseForge page.<br>
+Be careful downloading them from elsewhere, as unauthorized reposts are not monitored and could contain malware.<br>
+(If you are interested in the mod being added to another platform, please open an issue!)
 
 Other mods shouldn't conflict unless they do weird things with splash particles.
 

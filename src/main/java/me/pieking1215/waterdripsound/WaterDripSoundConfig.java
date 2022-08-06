@@ -4,11 +4,10 @@ import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import me.shedaniel.clothconfig2.gui.entries.BooleanListEntry;
 import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
-import net.minecraftforge.client.ConfigGuiHandler;
+import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ModLoadingContext;
 
@@ -51,18 +50,18 @@ public class WaterDripSoundConfig {
     }
 
     static void registerClothConfig() {
-        ModLoadingContext.get().registerExtensionPoint(ConfigGuiHandler.ConfigGuiFactory.class, () -> new ConfigGuiHandler.ConfigGuiFactory((client, parent) -> {
-            ConfigBuilder builder = ConfigBuilder.create().setParentScreen(parent).setTitle(new TranslatableComponent("config.waterdripsound.general"));
+        ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () -> new ConfigScreenHandler.ConfigScreenFactory((client, parent) -> {
+            ConfigBuilder builder = ConfigBuilder.create().setParentScreen(parent).setTitle(Component.translatable("config.waterdripsound.general"));
             builder.setDefaultBackgroundTexture(new ResourceLocation("minecraft:textures/block/mossy_stone_bricks.png"));
             builder.transparentBackground();
 
             ConfigEntryBuilder eb = builder.entryBuilder();
-            ConfigCategory general = builder.getOrCreateCategory(new TranslatableComponent("key.waterdripsound.category"));
-            general.addEntry(eb.startBooleanToggle(new TranslatableComponent("config.waterdripsound.enable"), GENERAL.enabled.get()).setDefaultValue(true).setSaveConsumer(GENERAL.enabled::set).build());
-            general.addEntry(eb.startIntSlider(new TranslatableComponent("config.waterdripsound.volume"), (int)(GENERAL.volume.get() * 100), 0, 100).setDefaultValue(30).setTextGetter(integer -> new TextComponent("Volume: " + integer + "%")).setSaveConsumer(integer -> GENERAL.volume.set(integer / 100.0)).build());
-            general.addEntry(eb.startIntSlider(new TranslatableComponent("config.waterdripsound.dripChance"), GENERAL.dripChance.get(), 1, 100).setDefaultValue(10).setTextGetter(integer -> new TextComponent("One in " + integer)).setSaveConsumer(GENERAL.dripChance::set).build());
-            general.addEntry(eb.startBooleanToggle(new TranslatableComponent("config.waterdripsound.useDripstoneSounds"), GENERAL.useDripstoneSounds.get()).setDefaultValue(true).setTooltip(new TranslatableComponent("tooltip.config.waterdripsound.useDripstoneSounds")).setSaveConsumer(GENERAL.useDripstoneSounds::set).build());
-            general.addEntry(eb.startEnumSelector(new TranslatableComponent("config.waterdripsound.soundCategory"), SoundSource.class, GENERAL.soundCategory.get()).setDefaultValue(SoundSource.AMBIENT).setEnumNameProvider(anEnum -> new TranslatableComponent("soundCategory." + ((SoundSource)anEnum).getName())).setSaveConsumer(GENERAL.soundCategory::set).build());
+            ConfigCategory general = builder.getOrCreateCategory(Component.translatable("key.waterdripsound.category"));
+            general.addEntry(eb.startBooleanToggle(Component.translatable("config.waterdripsound.enable"), GENERAL.enabled.get()).setDefaultValue(true).setSaveConsumer(GENERAL.enabled::set).build());
+            general.addEntry(eb.startIntSlider(Component.translatable("config.waterdripsound.volume"), (int)(GENERAL.volume.get() * 100), 0, 100).setDefaultValue(30).setTextGetter(integer -> Component.literal("Volume: " + integer + "%")).setSaveConsumer(integer -> GENERAL.volume.set(integer / 100.0)).build());
+            general.addEntry(eb.startIntSlider(Component.translatable("config.waterdripsound.dripChance"), GENERAL.dripChance.get(), 1, 100).setDefaultValue(10).setTextGetter(integer -> Component.literal("One in " + integer)).setSaveConsumer(GENERAL.dripChance::set).build());
+            general.addEntry(eb.startBooleanToggle(Component.translatable("config.waterdripsound.useDripstoneSounds"), GENERAL.useDripstoneSounds.get()).setDefaultValue(true).setTooltip(Component.translatable("tooltip.config.waterdripsound.useDripstoneSounds")).setSaveConsumer(GENERAL.useDripstoneSounds::set).build());
+            general.addEntry(eb.startEnumSelector(Component.translatable("config.waterdripsound.soundCategory"), SoundSource.class, GENERAL.soundCategory.get()).setDefaultValue(SoundSource.AMBIENT).setEnumNameProvider(anEnum -> Component.translatable("soundCategory." + ((SoundSource)anEnum).getName())).setSaveConsumer(GENERAL.soundCategory::set).build());
 
             return builder.setSavingRunnable(spec::save).build();
         }));

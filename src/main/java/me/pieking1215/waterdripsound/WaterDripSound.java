@@ -17,13 +17,13 @@ public class WaterDripSound {
 
     private static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, "waterdripsound");
     public static final RegistryObject<SoundEvent> LAVA_DRIP_SOUND = SOUNDS.register(
-            "lavadrip", () -> new SoundEvent(new ResourceLocation("waterdripsound", "lavadrip")));
+            "lavadrip", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("waterdripsound", "lavadrip")));
 
     public WaterDripSound(){
 
-        SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
-
         DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
+            SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
+
             ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, WaterDripSoundConfig.spec);
             WaterDripSoundConfig.registerClothConfig();
         });

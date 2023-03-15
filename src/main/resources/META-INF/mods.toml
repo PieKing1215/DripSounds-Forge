@@ -4,7 +4,7 @@ license="LGPL v3.0"
 issueTrackerURL="https://github.com/PieKing1215/WaterDripSound/issues"
 [[mods]]
 modId="waterdripsound"
-version="0.3.0"
+version="0.3.2"
 displayName="Drip Sounds"
 displayURL="https://github.com/PieKing1215/WaterDripSound"
 logoFile="logo.png"
@@ -20,7 +20,7 @@ description='''Makes drip particles play a sound (and other related changes).'''
 [[dependencies.waterdripsound]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19,)"
+    versionRange="[1.19.4,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.waterdripsound]]

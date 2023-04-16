@@ -1,7 +1,8 @@
 <h1>Drip Sounds (Forge)<br>
-  <a href="https://www.curseforge.com/minecraft/mc-mods/waterdripsound"><img src="http://cf.way2muchnoise.eu/versions/%20For%20MC%20_390986_all(555-0C8E8E-fff-010101).svg" alt="Supported Versions"></a>
+  <a href="https://modrinth.com/mod/waterdripsound"><img src="http://cf.way2muchnoise.eu/versions/%20For%20MC%20_390986_all(555-0C8E8E-fff-010101).svg" alt="Supported Versions"></a>
   <a href="https://github.com/PieKing1215/DripSounds-Forge/blob/master/COPYING"><img src="https://img.shields.io/github/license/PieKing1215/DripSounds-Forge?style=flat&color=0C8E8E" alt="License"></a>
-  <a href="https://www.curseforge.com/minecraft/mc-mods/waterdripsound"><img src="http://cf.way2muchnoise.eu/full_390986_downloads(E04E14-555-fff-010101-1C1C1C).svg" alt="Download Count"></a>
+  <a href="https://modrinth.com/mod/waterdripsound"><img src="https://img.shields.io/modrinth/dt/XOhqdyTf?label=Modrinth downloads&logo=modrinth" alt="Modrinth Download Count"></a>
+  <!-- <a href="https://www.curseforge.com/minecraft/mc-mods/waterdripsound"><img src="http://cf.way2muchnoise.eu/full_390986_downloads(E04E14-555-fff-010101-1C1C1C).svg" alt="Download Count"></a> -->
   <a href="https://ko-fi.com/X8X34Y6MZ"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Donate on ko-fi" width="160px"></a>
 </h1>
 
@@ -12,13 +13,13 @@
   <td>Forge</td>
   <td><a href="https://github.com/PieKing1215/DripSounds-Forge">GitHub</a></td>
   <td><a href="https://modrinth.com/mod/waterdripsound">Modrinth</a></td>
-  <td><a href="https://www.curseforge.com/minecraft/mc-mods/waterdripsound">CurseForge</a></td>
+  <td><a href="https://www.curseforge.com/minecraft/mc-mods/waterdripsound">CurseForge</a> (Mirror)</td>
 </tr>
 <tr>
   <td>Fabric</td>
   <td><a href="https://github.com/PieKing1215/DripSounds-Fabric">GitHub</a></td>
   <td><a href="https://modrinth.com/mod/dripsounds-fabric">Modrinth</a></td>
-  <td><a href="https://www.curseforge.com/minecraft/mc-mods/dripsounds-fabric">CurseForge</a></td>
+  <td><a href="https://www.curseforge.com/minecraft/mc-mods/dripsounds-fabric">CurseForge</a> (Mirror)</td>
 </tr>
 </table>
 
@@ -30,7 +31,7 @@
 This mod is client-side, so it does not need to be installed on the server for it to work.<br>
 *(NOTE: If you are not using the dripstone sounds, the custom lava drop sizzle sound only works in multiplayer if the server also has the mod. This will hopefully be fixed in a future version)*
 
-Requires [Cloth Config](https://www.curseforge.com/minecraft/mc-mods/cloth-config-forge) so the config screen works.
+Requires [Cloth Config](https://modrinth.com/mod/cloth-config) so the config screen works.
 
 ### [Releases](https://github.com/PieKing1215/DripSounds-Forge/releases)
 

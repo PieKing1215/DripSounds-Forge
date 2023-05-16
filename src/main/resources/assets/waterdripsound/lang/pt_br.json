@@ -1,0 +1,10 @@
+{
+    "key.waterdripsound.category": "Geral",
+    "config.waterdripsound.general": "Drip Sounds Config",
+    "config.waterdripsound.enable": "Habilitar",
+    "config.waterdripsound.volume": "Volume",
+    "config.waterdripsound.dripChance": "Chance de gotas",
+    "config.waterdripsound.useDripstoneSounds": "Usar sons de gotas",
+    "tooltip.config.waterdripsound.useDripstoneSounds": "Se ativado, usa o sons de gotas em água/lava\n sons de gotejamento adicionados em 1.17.\nSe não, usa sons de antigos\n versões do mod.",
+    "config.waterdripsound.soundCategory": "Categoria de som"
+}

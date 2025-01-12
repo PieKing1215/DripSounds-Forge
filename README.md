@@ -1,3 +1,5 @@
+### This repo is succeeded by https://github.com/PieKing1215/DripSounds which contains both Fabric and (Neo)Forge support
+
 <h1>Drip Sounds (Forge)<br>
   <a href="https://modrinth.com/mod/waterdripsound"><img src="http://cf.way2muchnoise.eu/versions/%20For%20MC%20_390986_all(555-0C8E8E-fff-010101).svg" alt="Supported Versions"></a>
   <a href="https://github.com/PieKing1215/DripSounds-Forge/blob/master/COPYING"><img src="https://img.shields.io/github/license/PieKing1215/DripSounds-Forge?style=flat&color=0C8E8E" alt="License"></a>
